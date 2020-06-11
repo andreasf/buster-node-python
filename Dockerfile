@@ -1,3 +1,5 @@
-FROM debian:buster
+FROM fedora:latest
 
-RUN apt-get update && apt-get install -y python3 nodejs npm
+RUN dnf install -y nodejs python findutils git \
+  	&& dnf clean all \
+  	&& rm -rf /var/cache/yum
